@@ -1,3 +1,22 @@
+const navLinks = document.querySelectorAll('nav ul li a');
+
+const activePage = () => {
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+}
+
+navLinks.forEach((link, idx) => {
+    link.addEventListener('click', () => {
+        if (!link.classList.contains('active')) {
+            activePage();
+            
+            link.classList.add('active');
+        }
+    });
+});
+
+
 const resumeBtns = document.querySelectorAll('.resume-btn');
 
 resumeBtns.forEach((btn,idx) => {
@@ -16,3 +35,39 @@ resumeBtns.forEach((btn,idx) => {
     });
 
 });
+
+/*const arrowRight = document.querySelector('.portfolio-box .navigation .arrow-right');
+const arrowLeft = document.querySelector('.portfolio-box .navigation .arrow-left');
+
+let index = 0;
+ 
+const activePortfolio = () => {
+    const imgSlide = document.querySelector('.portfolio-carousel .img-slide');
+
+    imgSlide.style.transform = 'translateX(calc(${index * -100}% - ${index * 2}rem))';
+
+}
+
+arrowRight.addEventListener('click', () => {
+
+    if (index < 4) {
+        index++;
+    }
+    else {
+        index = 5;
+    } 
+
+    activePortfolio();
+});
+
+arrowLeft.addEventListener('click', () => {
+
+    if (index > 1) {
+        index--;
+    }
+    else {
+        index = 0;
+    } 
+
+    activePortfolio();
+});*/
